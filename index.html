@@ -1,67 +1,236 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAP Garland, LLC</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MOROCCAN COMPANY FOR DESSERT AND CHOCOLATE — Raffinement & Goût</title>
+  <meta name="description" content="MOROCCAN COMPANY FOR DESSERT AND CHOCOLATE — fabrication artisanale de desserts et chocolats à Rabat. Contactez-nous : contact@minvra.shop ou +212 723 467 520."/>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      color: #333;
+    :root{
+      --primary:#b45309;  /* Chocolat doré */
+      --accent:#3f2f1b;   /* Brun profond */
+      --bg:#fdfaf6;       /* Beige doux */
+      --text:#231a12;
+      --muted:#7c6f64;
+      --radius:14px;
     }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:"Poppins",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+
+    header{
+      background:var(--accent);
+      color:#fef3c7;
+      box-shadow:0 4px 10px rgba(0,0,0,.3);
+      position:sticky;
+      top:0;
+      z-index:50;
     }
-    h1, h2 {
-      color: #003366;
+    .topbar{
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 24px;
     }
-    .contact {
-      background: #fff;
-      padding: 20px;
-      border-left: 5px solid #003366;
-      margin-top: 30px;
+    .brand{
+      font-weight:900;
+      font-size:1.3rem;
+      color:#fbbf24;
+      letter-spacing:1px;
     }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 50px;
+    nav{display:flex;gap:16px;}
+    nav a{
+      color:#fef3c7;
+      text-decoration:none;
+      font-weight:600;
+      padding:8px 12px;
+      border-radius:8px;
+      transition:.3s;
+    }
+    nav a:hover{background:rgba(255,255,255,0.15);}
+
+    .hero{
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      align-items:center;
+      padding:70px 24px;
+    }
+    .hero h1{
+      font-size:clamp(28px,4vw,46px);
+      color:var(--primary);
+      margin-bottom:12px;
+    }
+    .hero p{color:var(--muted);}
+    .hero img{
+      width:100%;
+      border-radius:var(--radius);
+      box-shadow:0 12px 40px rgba(0,0,0,0.25);
+    }
+    .btn{
+      display:inline-block;
+      margin-top:16px;
+      background:var(--primary);
+      color:white;
+      padding:12px 18px;
+      border-radius:8px;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 10px 25px rgba(180,83,9,0.3);
+      transition:.3s;
+    }
+    .btn:hover{background:#92400e;transform:translateY(-2px);}
+
+    section{max-width:1100px;margin:auto;padding:60px 24px;}
+    h2{font-size:clamp(22px,3vw,32px);color:var(--accent);margin-bottom:14px;}
+    .muted{color:var(--muted);}
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;margin-top:18px;
+    }
+    .card{
+      background:#fff;
+      border-radius:var(--radius);
+      border:1px solid #f0e7da;
+      padding:18px;
+      box-shadow:0 6px 14px rgba(0,0,0,.08);
+      transition:.3s;
+    }
+    .card:hover{transform:translateY(-4px);}
+    .card h3{color:var(--primary);margin-top:0;}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:14px;margin-top:20px;
+    }
+    .gallery img{
+      width:100%;
+      border-radius:var(--radius);
+      aspect-ratio:4/3;
+      object-fit:cover;
+      transition:transform .3s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    }
+    .gallery img:hover{transform:scale(1.03);}
+    .gallery img:last-child{width:70%;margin:auto;display:block;}
+
+    .contact-box{
+      background:linear-gradient(135deg,var(--accent),var(--primary));
+      color:#fff;
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:10px;
+    }
+    .contact-actions{
+      margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;
+    }
+    .contact-actions a{
+      background:#fff;color:var(--accent);
+      padding:10px 14px;border-radius:8px;
+      font-weight:700;text-decoration:none;
+      box-shadow:0 8px 24px rgba(0,0,0,0.1);
+      transition:.3s;
+    }
+    .contact-actions a:hover{transform:translateY(-3px);}
+    footer{
+      background:var(--accent);
+      color:#f3e8d3;
+      text-align:center;
+      padding:20px;
+    }
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;text-align:center;}
+      nav{display:none;}
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>CAP Garland, LLC</h1>
-    <p>Private Investment Fund</p>
-  </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>CAP Garland, LLC is a Washington-based private investment fund focused on delivering value through diversified investment strategies.</p>
+<header>
+  <div class="topbar">
+    <div class="brand">MOROCCAN COMPANY FOR DESSERT AND CHOCOLATE</div>
+    <nav>
+      <a href="#about">À propos</a>
+      <a href="#produits">Produits</a>
+      <a href="#gallery">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <h2>Contact</h2>
-    <div class="contact">
-      <p><strong>Address:</strong> 915 W 2nd Ave, Spokane, WA 99201</p>
-      <p><strong>Email:</strong> <a href="mailto:ryanberg@capgarland.shop">ryanberg@capgarland.shop</a></p>
-      <p><strong>Phone:</strong> (509) 822-3850</p>
+<section class="hero">
+  <div>
+    <h1>Le Goût Marocain du Chocolat et du Dessert</h1>
+    <p><strong>MOROCCAN COMPANY FOR DESSERT AND CHOCOLATE</strong> élabore des créations sucrées haut de gamme à Rabat. Notre passion : fusionner tradition marocaine et finesse du chocolat moderne.</p>
+    <a href="#contact" class="btn">Commander Maintenant</a>
+    <p class="muted" style="margin-top:14px;">contact@minvra.shop • +212 723 467 520</p>
+    <p class="muted">Rabat, Maroc</p>
+  </div>
+  <img src="https://i.pinimg.com/736x/b6/ef/2a/b6ef2a2fde714ce4e63a8ddaa7b83879.jpg" alt="Chocolaterie marocaine">
+</section>
+
+<section id="about">
+  <h2>À propos de nous</h2>
+  <p class="muted">
+    Fondée à Rabat, <strong>MOROCCAN COMPANY FOR DESSERT AND CHOCOLATE</strong> est une entreprise artisanale dédiée à la création de desserts et chocolats raffinés. Chaque pièce est préparée avec soin, utilisant les meilleurs ingrédients du Maroc et d'ailleurs.
+  </p>
+  <div class="cards">
+    <div class="card"><h3>Qualité Artisanale</h3><p>Nous privilégions des ingrédients naturels et locaux pour un goût authentique.</p></div>
+    <div class="card"><h3>Chocolats Fins</h3><p>Créations inspirées des meilleures maisons européennes, avec une touche marocaine.</p></div>
+    <div class="card"><h3>Livraison au Maroc</h3><p>Service rapide et soigné dans tout le Royaume.</p></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Galerie</h2>
+  <div class="gallery">
+    <img src="https://i.pinimg.com/736x/b6/ef/2a/b6ef2a2fde714ce4e63a8ddaa7b83879.jpg" alt="Dessert chocolat marocain">
+    <img src="https://static1-repo.aif.ru/1/81/738151/d8a558545e915d641dfd634a4387ab2f.jpg" alt="Table de desserts raffinés">
+    <img src="https://i.pinimg.com/736x/1f/a1/e5/1fa1e5a299cc578ac1be458ecaf0cb12.jpg" alt="Boîte cadeau de chocolats">
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact-box">
+    <div class="contact-grid">
+      <div><strong>Entreprise:</strong> MOROCCAN COMPANY FOR DESSERT AND CHOCOLATE</div>
+      <div><strong>Téléphone:</strong> +212 723 467 520</div>
+      <div><strong>Email:</strong> contact@minvra.shop</div>
+      <div style="grid-column:1/-1;"><strong>Adresse:</strong> Rabat, Maroc</div>
     </div>
-  </section>
+    <div class="contact-actions">
+      <a href="mailto:contact@minvra.shop">Email</a>
+      <a href="tel:+212723467520">Appeler</a>
+      <a href="https://wa.me/212723467520" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 CAP Garland, LLC. All rights reserved.
-  </footer>
+<footer>
+  © <span id="year"></span> MOROCCAN COMPANY FOR DESSERT AND CHOCOLATE — Fait avec amour au Maroc.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
